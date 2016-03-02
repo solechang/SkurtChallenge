@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B9BFB10E1C86BF1900E4DCEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BFB10D1C86BF1900E4DCEE /* AppDelegate.swift */; };
-		B9BFB1101C86BF1900E4DCEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BFB10F1C86BF1900E4DCEE /* ViewController.swift */; };
 		B9BFB1131C86BF1900E4DCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9BFB1111C86BF1900E4DCEE /* Main.storyboard */; };
 		B9BFB1151C86BF1900E4DCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9BFB1141C86BF1900E4DCEE /* Assets.xcassets */; };
 		B9BFB1181C86BF1900E4DCEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9BFB1161C86BF1900E4DCEE /* LaunchScreen.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		B9BFB10A1C86BF1900E4DCEE /* SkurtChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkurtChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9BFB10D1C86BF1900E4DCEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B9BFB10F1C86BF1900E4DCEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B9BFB1121C86BF1900E4DCEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9BFB1141C86BF1900E4DCEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9BFB1171C86BF1900E4DCEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				B9BFB10D1C86BF1900E4DCEE /* AppDelegate.swift */,
-				B9BFB10F1C86BF1900E4DCEE /* ViewController.swift */,
 				B9BFB1111C86BF1900E4DCEE /* Main.storyboard */,
 				B9BFB1141C86BF1900E4DCEE /* Assets.xcassets */,
 				B9BFB1161C86BF1900E4DCEE /* LaunchScreen.storyboard */,
@@ -256,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9BFB1101C86BF1900E4DCEE /* ViewController.swift in Sources */,
 				B9BFB10E1C86BF1900E4DCEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +478,7 @@
 				B9BFB1341C86BF1A00E4DCEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9BFB1351C86BF1A00E4DCEE /* Build configuration list for PBXNativeTarget "SkurtChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +487,7 @@
 				B9BFB1371C86BF1A00E4DCEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9BFB1381C86BF1A00E4DCEE /* Build configuration list for PBXNativeTarget "SkurtChallengeUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +496,7 @@
 				B9BFB13A1C86BF1A00E4DCEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
