@@ -40,6 +40,7 @@
                     <connections>
                         <outlet property="searchBar" destination="WLG-yM-1Zh" id="UvP-1i-gbX"/>
                         <outlet property="searchDisplayController" destination="hSo-Yx-4UQ" id="ygO-6v-qaI"/>
+                        <segue destination="HLC-qb-4MW" kind="show" identifier="flightDetailSegue" id="UrV-2H-C3Y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMT-GQ-Ncf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -53,7 +54,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="698" y="-41"/>
+            <point key="canvasLocation" x="664" y="-55"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="GE3-8M-6mc">
@@ -65,7 +66,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ywN-LA-Chj">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywN-LA-Chj" id="wuu-oz-UnD">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>

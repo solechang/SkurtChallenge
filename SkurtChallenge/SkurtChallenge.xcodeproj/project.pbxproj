@@ -15,6 +15,7 @@
 		B9186D1A1C8818BD00AC306F /* SkurtChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D191C8818BD00AC306F /* SkurtChallengeTests.m */; };
 		B9186D251C8818BD00AC306F /* SkurtChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D241C8818BD00AC306F /* SkurtChallengeUITests.m */; };
 		B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D331C88197100AC306F /* FlightTableViewController.m */; };
+		B97D69831C89484B0020D05A /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B97D69821C89484B0020D05A /* APIClient.m */; };
 		E8DCBE272F744BBA2E8DDB49 /* libPods-SkurtChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 977636C7CF7659789869A865 /* libPods-SkurtChallenge.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		B9186D261C8818BD00AC306F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9186D321C88197100AC306F /* FlightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightTableViewController.h; sourceTree = "<group>"; };
 		B9186D331C88197100AC306F /* FlightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewController.m; sourceTree = "<group>"; };
+		B97D69811C89484B0020D05A /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		B97D69821C89484B0020D05A /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		FBC8310EA6A0177EA296E043 /* Pods-SkurtChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkurtChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkurtChallenge/Pods-SkurtChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +129,8 @@
 				B9186CFF1C8818BD00AC306F /* Supporting Files */,
 				B9186D321C88197100AC306F /* FlightTableViewController.h */,
 				B9186D331C88197100AC306F /* FlightTableViewController.m */,
+				B97D69811C89484B0020D05A /* APIClient.h */,
+				B97D69821C89484B0020D05A /* APIClient.m */,
 			);
 			path = SkurtChallenge;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				B9186D041C8818BD00AC306F /* AppDelegate.m in Sources */,
 				B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */,
 				B9186D011C8818BD00AC306F /* main.m in Sources */,
+				B97D69831C89484B0020D05A /* APIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
