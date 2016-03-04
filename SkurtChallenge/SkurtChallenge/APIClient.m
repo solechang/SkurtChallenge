@@ -7,7 +7,7 @@
 //
 
 #import "APIClient.h"
-static NSString *const APIClientURLString = @"http://homeebackend.herokuapp.com/";
+static NSString *const APIClientURLString = @"http:///";
 
 @implementation APIClient
 

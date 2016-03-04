@@ -7,6 +7,7 @@
 //
 
 #import "FlightTableViewController.h"
+#import "APIClient.h"
 
 @interface FlightTableViewController ()
 
