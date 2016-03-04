@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		B9186D011C8818BD00AC306F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D001C8818BD00AC306F /* main.m */; };
 		B9186D041C8818BD00AC306F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D031C8818BD00AC306F /* AppDelegate.m */; };
-		B9186D071C8818BD00AC306F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D061C8818BD00AC306F /* ViewController.m */; };
 		B9186D0A1C8818BD00AC306F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9186D081C8818BD00AC306F /* Main.storyboard */; };
 		B9186D0C1C8818BD00AC306F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9186D0B1C8818BD00AC306F /* Assets.xcassets */; };
 		B9186D0F1C8818BD00AC306F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9186D0D1C8818BD00AC306F /* LaunchScreen.storyboard */; };
 		B9186D1A1C8818BD00AC306F /* SkurtChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D191C8818BD00AC306F /* SkurtChallengeTests.m */; };
 		B9186D251C8818BD00AC306F /* SkurtChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D241C8818BD00AC306F /* SkurtChallengeUITests.m */; };
+		B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D331C88197100AC306F /* FlightTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		B9186D001C8818BD00AC306F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9186D021C8818BD00AC306F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9186D031C8818BD00AC306F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B9186D051C8818BD00AC306F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B9186D061C8818BD00AC306F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B9186D091C8818BD00AC306F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9186D0B1C8818BD00AC306F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9186D0E1C8818BD00AC306F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		B9186D201C8818BD00AC306F /* SkurtChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkurtChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9186D241C8818BD00AC306F /* SkurtChallengeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkurtChallengeUITests.m; sourceTree = "<group>"; };
 		B9186D261C8818BD00AC306F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9186D321C88197100AC306F /* FlightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightTableViewController.h; sourceTree = "<group>"; };
+		B9186D331C88197100AC306F /* FlightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +103,13 @@
 			children = (
 				B9186D021C8818BD00AC306F /* AppDelegate.h */,
 				B9186D031C8818BD00AC306F /* AppDelegate.m */,
-				B9186D051C8818BD00AC306F /* ViewController.h */,
-				B9186D061C8818BD00AC306F /* ViewController.m */,
 				B9186D081C8818BD00AC306F /* Main.storyboard */,
 				B9186D0B1C8818BD00AC306F /* Assets.xcassets */,
 				B9186D0D1C8818BD00AC306F /* LaunchScreen.storyboard */,
 				B9186D101C8818BD00AC306F /* Info.plist */,
 				B9186CFF1C8818BD00AC306F /* Supporting Files */,
+				B9186D321C88197100AC306F /* FlightTableViewController.h */,
+				B9186D331C88197100AC306F /* FlightTableViewController.m */,
 			);
 			path = SkurtChallenge;
 			sourceTree = "<group>";
@@ -270,8 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9186D071C8818BD00AC306F /* ViewController.m in Sources */,
 				B9186D041C8818BD00AC306F /* AppDelegate.m in Sources */,
+				B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */,
 				B9186D011C8818BD00AC306F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
