@@ -24,11 +24,17 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self viewDidAppear:animated];
-    NSDictionary *info = [[NSDictionary alloc] init];
-    [[APIClient sharedClient] GET:@"v1/" parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
+    [super viewDidAppear:animated];
+    NSDictionary *info = @{@"appId" : @"91b929e6",
+                                        @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
+                                        };
+    
+    NSString *resourceURL = @"flex/schedules/v1/json/flight";
+    
+    [[APIClient sharedClient] GET:@"flex/airlines/rest/v1/json/all" parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@" 1. )%@", responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
