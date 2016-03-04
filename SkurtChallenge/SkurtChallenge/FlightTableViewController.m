@@ -23,6 +23,17 @@
     [self intializeFlightsArray];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self viewDidAppear:animated];
+    NSDictionary *info = [[NSDictionary alloc] init];
+    [[APIClient sharedClient] GET:@"v1/" parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
 
 - (void) intializeFlightsArray {
     self.flightsArray = [[NSMutableArray alloc] init];
