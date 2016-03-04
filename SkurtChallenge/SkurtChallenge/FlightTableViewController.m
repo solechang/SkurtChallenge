@@ -29,7 +29,7 @@
                                         @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
                                         };
     
-    NSString *resourceURL = @"flex/schedules/v1/json/flight";
+//    NSString *resourceURL = @"flex/schedules/v1/json/flight";
     
     [[APIClient sharedClient] GET:@"flex/airlines/rest/v1/json/all" parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
         
