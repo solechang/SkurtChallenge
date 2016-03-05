@@ -7,6 +7,7 @@ inhibit_all_warnings!
 target 'SkurtChallenge' do
     pod "AFNetworking"
     pod 'MagicalRecord'
+    pod 'PureLayout'
 #    pod 'FormatterKit'
 
 end
