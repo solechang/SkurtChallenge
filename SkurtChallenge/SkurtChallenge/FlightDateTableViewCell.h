@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FlightDateTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 
 @end

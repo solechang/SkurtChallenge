@@ -7,11 +7,24 @@
 //
 
 #import "FlightInfoTableViewCell.h"
+#import "PureLayout.h"
+
+@interface FlightInfoTableViewCell()
+@property (nonatomic, assign) BOOL didSetupConstraints;
+@end
 
 @implementation FlightInfoTableViewCell
 
+
 - (void)awakeFromNib {
     // Initialization code
+
+}
+-(void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    // Enter Custom Code
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
