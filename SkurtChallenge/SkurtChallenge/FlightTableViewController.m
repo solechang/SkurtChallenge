@@ -42,22 +42,7 @@
 //- (void)viewDidAppear:(BOOL)animated {
 //    [super viewDidAppear:animated];
 //    
-//    NSDictionary *info = @{@"appId" : @"91b929e6",
-//                                        @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
-//
-//                                        };
-//    
-////    NSString *resourceURL = @"flex/schedules/v1/json/flight";
-//    
-////    LH2014 flightID
-//    
-//    [[APIClient sharedClient] GET:@"v2/json/flight/status/" parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
-//        
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@" 1. )%@", responseObject);
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        NSLog(@" 1. )%@", error);
+;
 //        
 //    }];
 //}
@@ -91,16 +76,17 @@
     
     if (indexPath.row == 0) {
         [self.flightNumberTextField becomeFirstResponder];
+        [self hideDatePicker];
         
     } else if (indexPath.row == 1) {
         [self.carrierCodeTextField becomeFirstResponder];
-        
+        [self hideDatePicker];
     } else if (indexPath.row == 2 ) {
         // Pop up picker
         
         [self.flightNumberTextField resignFirstResponder];
         [self.carrierCodeTextField resignFirstResponder];
-
+        [self hideDatePicker];
         [self showPicker];
     } else if (indexPath.row == 3) {
         // Pop up date picker
@@ -109,6 +95,11 @@
         [self.carrierCodeTextField resignFirstResponder];
         [self showDatePicker];
     }
+}
+
+- (void) hideDatePicker {
+    self.rows = 4;
+    [self.tableView reloadData];
 }
 
 - (void) showPicker {
@@ -160,6 +151,14 @@
 }
 
 - (void) showDatePicker {
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    format.dateFormat = @"MM-dd-yyyy";
+    
+//    NSLog(@"%@", [format stringFromDate:[NSDate new]]);
+    
+    self.dateLabel.textColor = [UIColor blackColor];
+    self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", [format stringFromDate:self.datePicker.date]];
     if (self.rows == 4) {
             self.rows = 5;
     } else  {
@@ -167,27 +166,15 @@
     }
 
     [self.tableView reloadData];
-    
-
-    
 }
--(void) datePickerChanged:(id)sender {
-    NSLog(@"1.) value: %@",[sender date]);
+
+- (IBAction)datePickerChanged:(id)sender {
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    format.dateFormat = @"MM-dd-yyyy";
+    
+    self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", [format stringFromDate:[sender date]]];
+//     NSLog(@"1.) value: %@",[sender date]);
 }
-//- (void)showDatePickerCell {
-//    self.datePickerIsShowing = YES;
-//    [self.tableView beginUpdates];
-//    [self.tableView endUpdates];
-//    
-//    self.datePicker.hidden = NO;
-//    self.datePicker.alpha = 0.0f;
-//    
-//    [UIView animateWithDuration:0.25 animations:^{
-//        self.datePicker.alpha = 1.0f;
-//    }];
-//}
-
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 4) {
@@ -218,6 +205,25 @@
 #pragma mark - Buttons
 - (IBAction)doneButtonPressed:(id)sender {
     
+        NSDictionary *info = @{@"appId" : @"91b929e6",
+                                            @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
+    
+                                            };
+//    curl -v  -X GET "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/100/arr/2016/3/6?appId=91b929e6&appKey=2eebba75c50ce13c31b9ef0b331fb93a&utc=false"
+    //    NSString *resourceURL = @"flex/schedules/v1/json/flight";
+    
+    //    LH2014 flightID
+    
+    
+    
+        [[APIClient sharedClient] GET:@"v2/json/flight/status/" parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
+    
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@" 1. )%@", responseObject);
+    
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@" 1. )%@", error);
+        }];
     
 }
 

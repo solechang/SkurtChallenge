@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *departingOrArrivingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @end

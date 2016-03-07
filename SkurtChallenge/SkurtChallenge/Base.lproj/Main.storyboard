@@ -115,6 +115,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="479012546.205051">
                                                         <!--2016-03-07 03:02:26 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="2yH-i7-aXs" eventType="valueChanged" id="27d-Wa-ow6"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -143,6 +146,7 @@
                     <connections>
                         <outlet property="carrierCodeTextField" destination="m6x-hA-aiY" id="Uec-fR-yQw"/>
                         <outlet property="dateLabel" destination="GXx-Ig-OGp" id="bU6-jp-DRH"/>
+                        <outlet property="datePicker" destination="pxY-Ir-VhY" id="Tc2-rs-jZ3"/>
                         <outlet property="departingOrArrivingLabel" destination="0zg-c9-7C4" id="rDJ-Gz-sWt"/>
                         <outlet property="doneButton" destination="K9p-Qe-Nfp" id="NbY-pR-og6"/>
                         <outlet property="flightNumberTextField" destination="mCW-7t-4tg" id="whL-bF-XEe"/>
