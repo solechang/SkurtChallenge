@@ -71,15 +71,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departing or Arriving" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zg-c9-7C4">
-                                                    <rect key="frame" x="19" y="25" width="136" height="17"/>
+                                                    <rect key="frame" x="19" y="25" width="135.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.85979567310000005" green="0.85979567310000005" blue="0.85979567310000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YZE-WA-jO0">
+                                                    <rect key="frame" x="290" y="24" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="YZE-WA-jO0" firstAttribute="centerY" secondItem="35D-uN-rai" secondAttribute="centerY" id="JxS-da-Mrl"/>
                                                 <constraint firstItem="0zg-c9-7C4" firstAttribute="centerY" secondItem="35D-uN-rai" secondAttribute="centerY" id="Zia-jM-Jie"/>
                                                 <constraint firstItem="0zg-c9-7C4" firstAttribute="leading" secondItem="35D-uN-rai" secondAttribute="leadingMargin" constant="11" id="cec-3u-DQE"/>
+                                                <constraint firstItem="YZE-WA-jO0" firstAttribute="centerX" secondItem="35D-uN-rai" secondAttribute="centerX" id="rpN-rH-tsK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -150,6 +155,7 @@
                         <outlet property="departingOrArrivingLabel" destination="0zg-c9-7C4" id="rDJ-Gz-sWt"/>
                         <outlet property="doneButton" destination="K9p-Qe-Nfp" id="NbY-pR-og6"/>
                         <outlet property="flightNumberTextField" destination="mCW-7t-4tg" id="whL-bF-XEe"/>
+                        <outlet property="refreshActivityIndicator" destination="YZE-WA-jO0" id="wL4-P6-g5N"/>
                         <segue destination="HLC-qb-4MW" kind="show" identifier="flightStatusSegue" id="UrV-2H-C3Y"/>
                     </connections>
                 </tableViewController>

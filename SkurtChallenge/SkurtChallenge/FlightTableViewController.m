@@ -12,9 +12,11 @@
 #import "FlightInfoTableViewCell.h"
 
 #import "FlightStatusTableViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface FlightTableViewController ()
 
+@property (nonatomic) NSDictionary *flightStatusDictionary;
 @property (nonatomic) NSMutableArray *flightsArray;
 @property (nonatomic) BOOL datePickerIsShowing;
 @property (nonatomic) NSInteger rows;
@@ -31,6 +33,7 @@
     [self intializeFlightsArray];
     [self setupDelegates];
     
+    [self.refreshActivityIndicator setHidden:YES];
     self.rows = 4;
 }
 
@@ -75,6 +78,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [SVProgressHUD dismiss];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
@@ -204,17 +208,28 @@
     
     return YES;
 }
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [SVProgressHUD dismiss];
+}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    [SVProgressHUD dismiss];
+    return YES;
+}
 
 #pragma mark - Buttons
 - (IBAction)doneButtonPressed:(id)sender {
     
+    [self.doneButton setEnabled:NO];
+    [self.refreshActivityIndicator setHidden:NO];
+    [self.refreshActivityIndicator startAnimating];
+    [self.carrierCodeTextField resignFirstResponder];
+    [self.flightNumberTextField resignFirstResponder];
+    [SVProgressHUD dismiss];
         NSDictionary *info = @{@"appId" : @"91b929e6",
                                             @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
                                             };
 //   "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/100/arr/2016/3/6?appId=91b929e6&appKey=2eebba75c50ce13c31b9ef0b331fb93a&utc=false"
-    //    NSString *resourceURL = @"flex/schedules/v1/json/flight";
-    
-    //    LH2014 flightID
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     format.dateFormat = @"yyyy";
@@ -231,15 +246,35 @@
                             self.departingOrArriving,
                             year,month,day ];
     
-    NSLog(@"1.) %@", resourceURL);
+//    NSLog(@"1.) %@", resourceURL);
     [[APIClient sharedClient] GET:resourceURL parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
 
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@" 1. )%@", responseObject);
-        [self performSegueWithIdentifier:@"flightDetailSegue" sender:self];
+//        NSLog(@" 1. )%@", responseObject);
+        NSDictionary *responseDictionary = responseObject;
+        NSArray *flightStatus = responseDictionary[@"flightStatuses"];
+        
+        
+        if (!responseDictionary[@"error"] && flightStatus.count != 0 ) {
+
+                
+                self.flightStatusDictionary = [[NSDictionary alloc] initWithDictionary:responseDictionary];
+            
+            [self performSegueWithIdentifier:@"flightStatusSegue" sender:self];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"Please make sure you have entered the correct flight information."];
+        }
+
+        [self.refreshActivityIndicator setHidden:YES];
+        [self.refreshActivityIndicator stopAnimating];
+        [self.doneButton setEnabled:YES];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@" 1. )%@", error);
+        NSLog(@" 2. )%@", error);
+        [self.doneButton setEnabled:YES];
+        [self.refreshActivityIndicator setHidden:YES];
+        [self.refreshActivityIndicator stopAnimating];
+        [SVProgressHUD showErrorWithStatus:@"Please make sure you have entered the correct flight information."];
     }];
     
 }
@@ -255,8 +290,9 @@
         // Get destination view
         
         FlightStatusTableViewController *controller = (FlightStatusTableViewController*)segue.destinationViewController;
-//        controller.flightStatusDictionary = 
+        controller.flightStatusDictionary = self.flightStatusDictionary;
 
+        
         
     }
     
