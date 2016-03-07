@@ -8,8 +8,6 @@
 
 #import "FlightTableViewController.h"
 #import "APIClient.h"
-#import "FlightDateTableViewCell.h"
-#import "FlightInfoTableViewCell.h"
 
 #import "FlightStatusTableViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
@@ -82,11 +80,12 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-        [self.flightNumberTextField becomeFirstResponder];
+
+        [self.flightNumberTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
         [self hideDatePicker];
         
     } else if (indexPath.row == 1) {
-        [self.carrierCodeTextField becomeFirstResponder];
+        [self.carrierCodeTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
         [self hideDatePicker];
     } else if (indexPath.row == 2 ) {
         // Pop up picker
@@ -209,10 +208,13 @@
     return YES;
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+
     [SVProgressHUD dismiss];
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+
+
     [SVProgressHUD dismiss];
     return YES;
 }
@@ -226,10 +228,10 @@
     [self.carrierCodeTextField resignFirstResponder];
     [self.flightNumberTextField resignFirstResponder];
     [SVProgressHUD dismiss];
-        NSDictionary *info = @{@"appId" : @"91b929e6",
+    
+    NSDictionary *info = @{@"appId" : @"91b929e6",
                                             @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
                                             };
-//   "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/100/arr/2016/3/6?appId=91b929e6&appKey=2eebba75c50ce13c31b9ef0b331fb93a&utc=false"
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     format.dateFormat = @"yyyy";
@@ -257,10 +259,10 @@
         
         if (!responseDictionary[@"error"] && flightStatus.count != 0 ) {
 
-                
-                self.flightStatusDictionary = [[NSDictionary alloc] initWithDictionary:responseDictionary];
+            self.flightStatusDictionary = [[NSDictionary alloc] initWithDictionary:responseDictionary];
             
             [self performSegueWithIdentifier:@"flightStatusSegue" sender:self];
+            
         } else {
             [SVProgressHUD showErrorWithStatus:@"Please make sure you have entered the correct flight information."];
         }
@@ -288,12 +290,9 @@
     if ([segue.identifier isEqualToString:@"flightStatusSegue"]){
         
         // Get destination view
-        
         FlightStatusTableViewController *controller = (FlightStatusTableViewController*)segue.destinationViewController;
         controller.flightStatusDictionary = self.flightStatusDictionary;
 
-        
-        
     }
     
 }

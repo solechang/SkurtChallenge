@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B904F76E1C8A7F7B0089D3A7 /* FlightInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B904F76D1C8A7F7B0089D3A7 /* FlightInfoTableViewCell.m */; };
-		B904F7711C8A7F8B0089D3A7 /* FlightDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B904F7701C8A7F8B0089D3A7 /* FlightDateTableViewCell.m */; };
 		B9186D011C8818BD00AC306F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D001C8818BD00AC306F /* main.m */; };
 		B9186D041C8818BD00AC306F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D031C8818BD00AC306F /* AppDelegate.m */; };
 		B9186D0A1C8818BD00AC306F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9186D081C8818BD00AC306F /* Main.storyboard */; };
@@ -42,10 +40,6 @@
 /* Begin PBXFileReference section */
 		76E716EC46D02C8669CD8CDF /* Pods-SkurtChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkurtChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkurtChallenge/Pods-SkurtChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		977636C7CF7659789869A865 /* libPods-SkurtChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkurtChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B904F76C1C8A7F7B0089D3A7 /* FlightInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightInfoTableViewCell.h; sourceTree = "<group>"; };
-		B904F76D1C8A7F7B0089D3A7 /* FlightInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightInfoTableViewCell.m; sourceTree = "<group>"; };
-		B904F76F1C8A7F8B0089D3A7 /* FlightDateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightDateTableViewCell.h; sourceTree = "<group>"; };
-		B904F7701C8A7F8B0089D3A7 /* FlightDateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightDateTableViewCell.m; sourceTree = "<group>"; };
 		B9186CFC1C8818BD00AC306F /* SkurtChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkurtChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9186D001C8818BD00AC306F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9186D021C8818BD00AC306F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -140,10 +134,6 @@
 				B9186D331C88197100AC306F /* FlightTableViewController.m */,
 				B97D69811C89484B0020D05A /* APIClient.h */,
 				B97D69821C89484B0020D05A /* APIClient.m */,
-				B904F76C1C8A7F7B0089D3A7 /* FlightInfoTableViewCell.h */,
-				B904F76D1C8A7F7B0089D3A7 /* FlightInfoTableViewCell.m */,
-				B904F76F1C8A7F8B0089D3A7 /* FlightDateTableViewCell.h */,
-				B904F7701C8A7F8B0089D3A7 /* FlightDateTableViewCell.m */,
 				B9FD665E1C8D57060047DC93 /* FlightStatusTableViewController.h */,
 				B9FD665F1C8D57060047DC93 /* FlightStatusTableViewController.m */,
 			);
@@ -365,8 +355,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B904F76E1C8A7F7B0089D3A7 /* FlightInfoTableViewCell.m in Sources */,
-				B904F7711C8A7F8B0089D3A7 /* FlightDateTableViewCell.m in Sources */,
 				B9186D041C8818BD00AC306F /* AppDelegate.m in Sources */,
 				B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */,
 				B9186D011C8818BD00AC306F /* main.m in Sources */,
