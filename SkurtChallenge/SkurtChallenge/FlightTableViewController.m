@@ -291,6 +291,7 @@
         
         // Get destination view
         FlightStatusViewController *controller = (FlightStatusViewController*)segue.destinationViewController;
+
         controller.flightStatusDictionary = self.flightStatusDictionary;
 
     }

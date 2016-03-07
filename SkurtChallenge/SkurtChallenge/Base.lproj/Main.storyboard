@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="780" y="-41"/>
         </scene>
-        <!--View Controller-->
+        <!--Flight Status View Controller-->
         <scene sceneID="x4c-x3-HOi">
             <objects>
-                <viewController id="KlA-pP-jQ0" sceneMemberID="viewController">
+                <viewController id="KlA-pP-jQ0" customClass="FlightStatusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oTh-Dg-GVZ"/>
                         <viewControllerLayoutGuide type="bottom" id="N1t-kd-EX0"/>
