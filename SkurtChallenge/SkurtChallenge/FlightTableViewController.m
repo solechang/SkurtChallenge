@@ -16,6 +16,7 @@
 @property (nonatomic) NSMutableArray *flightsArray;
 @property (nonatomic) BOOL datePickerIsShowing;
 @property (nonatomic) NSInteger rows;
+@property (nonatomic) NSString *departingOrArriving;
 
 @end
 
@@ -122,6 +123,7 @@
                              //Do some thing here
                              self.departingOrArrivingLabel.text = @"Flight: Departing";
                              self.departingOrArrivingLabel.textColor = [UIColor blackColor];
+                             self.departingOrArriving = @"dep";
                              [self.tableView selectRowAtIndexPath:indexPath
                                                          animated:YES
                                                    scrollPosition:UITableViewScrollPositionNone];
@@ -136,6 +138,7 @@
                              {
                                  self.departingOrArrivingLabel.text = @"Flight: Arriving";
                                  self.departingOrArrivingLabel.textColor = [UIColor blackColor];
+                                 self.departingOrArriving = @"arr";
                                  [self.tableView selectRowAtIndexPath:indexPath
                                                              animated:YES
                                                        scrollPosition:UITableViewScrollPositionNone];
@@ -209,14 +212,29 @@
                                             @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
     
                                             };
-//    curl -v  -X GET "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/100/arr/2016/3/6?appId=91b929e6&appKey=2eebba75c50ce13c31b9ef0b331fb93a&utc=false"
+//   "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/100/arr/2016/3/6?appId=91b929e6&appKey=2eebba75c50ce13c31b9ef0b331fb93a&utc=false"
     //    NSString *resourceURL = @"flex/schedules/v1/json/flight";
     
     //    LH2014 flightID
     
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    format.dateFormat = @"yyyy";
     
+    NSString *year =  [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
+                                                        
+                                                        
     
-        [[APIClient sharedClient] GET:@"v2/json/flight/status/" parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
+        format.dateFormat = @"MM";
+     NSString *month = [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
+        format.dateFormat = @"dd";
+     NSString *day =  [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
+    
+//    [NSString stringWithFormat:@"Date: %@", [format stringFromDate:self.datePicker.date]];
+    
+    NSString *resourceURL= [NSString stringWithFormat:@"flex/flightstatus/rest/v2/json/flight/status/%@/%@/%@/%@/%@/%@", self.carrierCodeTextField.text, self.flightNumberTextField.text, self.departingOrArriving, year,month,day];
+    
+    NSLog(@"1.) %@", resourceURL);
+        [[APIClient sharedClient] GET:resourceURL parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
     
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@" 1. )%@", responseObject);

@@ -7,7 +7,7 @@
 //
 
 #import "APIClient.h"
-static NSString *const APIClientURLString = @"https://api.flightstats.com/flex/flightstatus/";
+static NSString *const APIClientURLString = @"https://api.flightstats.com/";
 
 @implementation APIClient
 
