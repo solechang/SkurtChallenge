@@ -9,7 +9,7 @@
 #import "FlightTableViewController.h"
 #import "APIClient.h"
 
-#import "FlightStatusTableViewController.h"
+#import "FlightStatusViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
 @interface FlightTableViewController ()
@@ -290,7 +290,7 @@
     if ([segue.identifier isEqualToString:@"flightStatusSegue"]){
         
         // Get destination view
-        FlightStatusTableViewController *controller = (FlightStatusTableViewController*)segue.destinationViewController;
+        FlightStatusViewController *controller = (FlightStatusViewController*)segue.destinationViewController;
         controller.flightStatusDictionary = self.flightStatusDictionary;
 
     }

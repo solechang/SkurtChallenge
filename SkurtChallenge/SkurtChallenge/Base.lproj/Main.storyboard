@@ -63,7 +63,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArrivingDepartingCell" rowHeight="68" id="XUR-2g-Ugt" customClass="FlightDateTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArrivingDepartingCell" rowHeight="68" id="XUR-2g-Ugt">
                                         <rect key="frame" x="0.0" y="204" width="600" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XUR-2g-Ugt" id="35D-uN-rai">
@@ -88,7 +88,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateCell" rowHeight="68" id="XbX-6I-N5T" customClass="FlightDateTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateCell" rowHeight="68" id="XbX-6I-N5T">
                                         <rect key="frame" x="0.0" y="272" width="600" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XbX-6I-N5T" id="nHd-70-1PO">
@@ -108,7 +108,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DatePickerCell" rowHeight="140" id="yWt-i4-LtR" customClass="FlightDateTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DatePickerCell" rowHeight="140" id="yWt-i4-LtR">
                                         <rect key="frame" x="0.0" y="340" width="600" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yWt-i4-LtR" id="fDA-f8-QkW">
@@ -156,40 +156,30 @@
                         <outlet property="doneButton" destination="K9p-Qe-Nfp" id="NbY-pR-og6"/>
                         <outlet property="flightNumberTextField" destination="mCW-7t-4tg" id="whL-bF-XEe"/>
                         <outlet property="refreshActivityIndicator" destination="YZE-WA-jO0" id="wL4-P6-g5N"/>
-                        <segue destination="HLC-qb-4MW" kind="show" identifier="flightStatusSegue" id="UrV-2H-C3Y"/>
+                        <segue destination="KlA-pP-jQ0" kind="show" identifier="flightStatusSegue" id="CHP-4B-XcR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMT-GQ-Ncf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="-41"/>
+            <point key="canvasLocation" x="780" y="-41"/>
         </scene>
-        <!--Flight Status Table View Controller-->
-        <scene sceneID="GE3-8M-6mc">
+        <!--View Controller-->
+        <scene sceneID="x4c-x3-HOi">
             <objects>
-                <tableViewController id="HLC-qb-4MW" customClass="FlightStatusTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="p50-Xa-PbH">
+                <viewController id="KlA-pP-jQ0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oTh-Dg-GVZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="N1t-kd-EX0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bjl-5h-TLi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlightDetailCell" id="ywN-LA-Chj">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywN-LA-Chj" id="wuu-oz-UnD">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="HLC-qb-4MW" id="G4F-t1-t6o"/>
-                            <outlet property="delegate" destination="HLC-qb-4MW" id="HXi-ca-Iqf"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="brB-bO-dHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeY-DR-jKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421" y="-41"/>
+            <point key="canvasLocation" x="1457" y="-29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VNw-hZ-SbU">
