@@ -107,7 +107,7 @@
 
 - (void) showPicker {
     UIAlertController * view=   [UIAlertController
-                                 alertControllerWithTitle:@"Choose Flight Option"
+                                 alertControllerWithTitle:@"Flight Status"
                                  message:@"Is your flight departing or arriving?"
                                  preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -166,7 +166,7 @@
     self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", [format stringFromDate:self.datePicker.date]];
     if (self.rows == 4) {
             self.rows = 5;
-    } 
+    }
 
     [self.tableView reloadData];
 }
