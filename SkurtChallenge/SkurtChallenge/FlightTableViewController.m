@@ -11,6 +11,8 @@
 #import "FlightDateTableViewCell.h"
 #import "FlightInfoTableViewCell.h"
 
+#import "FlightStatusTableViewController.h"
+
 @interface FlightTableViewController ()
 
 @property (nonatomic) NSMutableArray *flightsArray;
@@ -164,9 +166,7 @@
     self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", [format stringFromDate:self.datePicker.date]];
     if (self.rows == 4) {
             self.rows = 5;
-    } else  {
-        self.rows = 4;
-    }
+    } 
 
     [self.tableView reloadData];
 }
@@ -210,7 +210,6 @@
     
         NSDictionary *info = @{@"appId" : @"91b929e6",
                                             @"appKey" : @"2eebba75c50ce13c31b9ef0b331fb93a",
-    
                                             };
 //   "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/100/arr/2016/3/6?appId=91b929e6&appKey=2eebba75c50ce13c31b9ef0b331fb93a&utc=false"
     //    NSString *resourceURL = @"flex/schedules/v1/json/flight";
@@ -219,32 +218,48 @@
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     format.dateFormat = @"yyyy";
-    
     NSString *year =  [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
-                                                        
-                                                        
+    format.dateFormat = @"MM";
+    NSString *month = [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
+    format.dateFormat = @"dd";
+    NSString *day =  [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
     
-        format.dateFormat = @"MM";
-     NSString *month = [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
-        format.dateFormat = @"dd";
-     NSString *day =  [[NSString alloc] initWithFormat:@"%@",[format stringFromDate:self.datePicker.date]];
-    
-//    [NSString stringWithFormat:@"Date: %@", [format stringFromDate:self.datePicker.date]];
-    
-    NSString *resourceURL= [NSString stringWithFormat:@"flex/flightstatus/rest/v2/json/flight/status/%@/%@/%@/%@/%@/%@", self.carrierCodeTextField.text, self.flightNumberTextField.text, self.departingOrArriving, year,month,day];
+    NSString *resourceURL= [NSString stringWithFormat:
+                            @"flex/flightstatus/rest/v2/json/flight/status/%@/%@/%@/%@/%@/%@",
+                            self.carrierCodeTextField.text,
+                            self.flightNumberTextField.text,
+                            self.departingOrArriving,
+                            year,month,day ];
     
     NSLog(@"1.) %@", resourceURL);
-        [[APIClient sharedClient] GET:resourceURL parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
-    
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@" 1. )%@", responseObject);
-    
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@" 1. )%@", error);
-        }];
+    [[APIClient sharedClient] GET:resourceURL parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
+
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@" 1. )%@", responseObject);
+        [self performSegueWithIdentifier:@"flightDetailSegue" sender:self];
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@" 1. )%@", error);
+    }];
     
 }
 
+#pragma mark - Navigation Segue
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"flightStatusSegue"]){
+        
+        // Get destination view
+        
+        FlightStatusTableViewController *controller = (FlightStatusTableViewController*)segue.destinationViewController;
+//        controller.flightStatusDictionary = 
+
+        
+    }
+    
+}
 
 @end

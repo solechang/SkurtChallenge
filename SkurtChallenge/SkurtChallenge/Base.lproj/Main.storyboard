@@ -150,17 +150,17 @@
                         <outlet property="departingOrArrivingLabel" destination="0zg-c9-7C4" id="rDJ-Gz-sWt"/>
                         <outlet property="doneButton" destination="K9p-Qe-Nfp" id="NbY-pR-og6"/>
                         <outlet property="flightNumberTextField" destination="mCW-7t-4tg" id="whL-bF-XEe"/>
-                        <segue destination="HLC-qb-4MW" kind="show" identifier="flightDetailSegue" id="UrV-2H-C3Y"/>
+                        <segue destination="HLC-qb-4MW" kind="show" identifier="flightStatusSegue" id="UrV-2H-C3Y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMT-GQ-Ncf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="716" y="-41"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Flight Status Table View Controller-->
         <scene sceneID="GE3-8M-6mc">
             <objects>
-                <tableViewController id="HLC-qb-4MW" sceneMemberID="viewController">
+                <tableViewController id="HLC-qb-4MW" customClass="FlightStatusTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="p50-Xa-PbH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
