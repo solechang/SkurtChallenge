@@ -17,7 +17,6 @@
 
 @interface FlightTableViewController ()
 @property (nonatomic) NSDictionary *flightStatusDictionary;
-@property (nonatomic) NSMutableArray *flightsArray;
 @property (nonatomic) BOOL datePickerIsShowing;
 @property (nonatomic) NSInteger rows;
 @property (nonatomic) NSString *departingOrArriving;
@@ -29,8 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTableView];
-    
-    [self intializeFlightsArray];
     [self setupDelegates];
     
     [self.refreshActivityIndicator setHidden:YES];
@@ -54,14 +51,6 @@
 }
 - (void) setupTableView {
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-}
-
-
-- (void) intializeFlightsArray {
-    self.flightsArray = [[NSMutableArray alloc] init];
-    [self.flightsArray addObject:@"HI"];
-    [self.flightsArray addObject:@"HI"];
-    
 }
 
 - (void)didReceiveMemoryWarning {
