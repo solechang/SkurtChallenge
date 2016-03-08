@@ -9,6 +9,8 @@ Instructions:
     - Carrier Code: VX
     - Departing
     - Today’s date
+    
+
 4.) Press Done
 	- Status screen will be segued of the flight result
 5.) Press ‘Save’ to save the flight status
