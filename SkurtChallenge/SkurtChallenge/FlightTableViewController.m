@@ -162,6 +162,7 @@
     
     self.dateLabel.textColor = [UIColor blackColor];
     self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", [format stringFromDate:self.datePicker.date]];
+    
     if (self.rows == 4) {
             self.rows = 5;
     }

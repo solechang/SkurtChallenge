@@ -37,9 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)backButtonPressed:(id)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (IBAction)deleteButtonPressed:(id)sender {
@@ -47,8 +47,6 @@
     //alert
 }
 - (void)popAlertViewForLoggingOut{
-    
-    
     
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Flight Status"
