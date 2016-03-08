@@ -78,7 +78,6 @@
     [alert addAction:yesAlert];
     
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
 
 - (void) deleteFlightStatus {
