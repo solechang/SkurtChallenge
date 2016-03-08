@@ -1,5 +1,5 @@
 //
-//  FlightStatusViewController.h
+//  SavedFlightViewController.h
 //  SkurtChallenge
 //
 //  Created by Chang Choi on 3/7/16.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlightStatusViewController : UIViewController
-
-@property(nonatomic) NSDictionary* flightStatusDictionary;
+@interface SavedFlightViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *carrierFsCodeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *airlineNameLabel;
@@ -26,5 +24,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *status;
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-
 @end

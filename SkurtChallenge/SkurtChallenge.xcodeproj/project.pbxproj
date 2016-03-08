@@ -15,6 +15,7 @@
 		B9186D1A1C8818BD00AC306F /* SkurtChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D191C8818BD00AC306F /* SkurtChallengeTests.m */; };
 		B9186D251C8818BD00AC306F /* SkurtChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D241C8818BD00AC306F /* SkurtChallengeUITests.m */; };
 		B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D331C88197100AC306F /* FlightTableViewController.m */; };
+		B95C8EF61C8E8350004F439C /* SavedFlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95C8EF51C8E8350004F439C /* SavedFlightViewController.m */; };
 		B97D69831C89484B0020D05A /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B97D69821C89484B0020D05A /* APIClient.m */; };
 		B9FD66631C8D6E830047DC93 /* FlightStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FD66621C8D6E830047DC93 /* FlightStatusViewController.m */; };
 		E8DCBE272F744BBA2E8DDB49 /* libPods-SkurtChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 977636C7CF7659789869A865 /* libPods-SkurtChallenge.a */; };
@@ -56,6 +57,8 @@
 		B9186D261C8818BD00AC306F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9186D321C88197100AC306F /* FlightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightTableViewController.h; sourceTree = "<group>"; };
 		B9186D331C88197100AC306F /* FlightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewController.m; sourceTree = "<group>"; };
+		B95C8EF41C8E8350004F439C /* SavedFlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedFlightViewController.h; sourceTree = "<group>"; };
+		B95C8EF51C8E8350004F439C /* SavedFlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedFlightViewController.m; sourceTree = "<group>"; };
 		B97D69811C89484B0020D05A /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		B97D69821C89484B0020D05A /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		B9FD66611C8D6E830047DC93 /* FlightStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightStatusViewController.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				B97D69821C89484B0020D05A /* APIClient.m */,
 				B9FD66611C8D6E830047DC93 /* FlightStatusViewController.h */,
 				B9FD66621C8D6E830047DC93 /* FlightStatusViewController.m */,
+				B95C8EF41C8E8350004F439C /* SavedFlightViewController.h */,
+				B95C8EF51C8E8350004F439C /* SavedFlightViewController.m */,
 			);
 			path = SkurtChallenge;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */,
 				B9186D011C8818BD00AC306F /* main.m in Sources */,
 				B97D69831C89484B0020D05A /* APIClient.m in Sources */,
+				B95C8EF61C8E8350004F439C /* SavedFlightViewController.m in Sources */,
 				B9FD66631C8D6E830047DC93 /* FlightStatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
