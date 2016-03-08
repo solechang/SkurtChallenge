@@ -12,8 +12,10 @@
 #import "FlightStatusViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-@interface FlightTableViewController ()
+#import <MagicalRecord/MagicalRecord.h>
+#import "Flight+CoreDataProperties.h"
 
+@interface FlightTableViewController ()
 @property (nonatomic) NSDictionary *flightStatusDictionary;
 @property (nonatomic) NSMutableArray *flightsArray;
 @property (nonatomic) BOOL datePickerIsShowing;
@@ -35,6 +37,17 @@
     self.rows = 4;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    Flight *flight = [Flight MR_findFirst];
+    if (flight) {
+        self.savedFlightsButton.enabled = YES;
+    } else {
+        self.savedFlightsButton.enabled = NO;
+    }
+}
+
 -(void) setupDelegates {
     self.carrierCodeTextField.delegate = self;
     self.flightNumberTextField.delegate = self;
@@ -43,13 +56,6 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    
-;
-//        
-//    }];
-//}
 
 - (void) intializeFlightsArray {
     self.flightsArray = [[NSMutableArray alloc] init];
@@ -246,16 +252,14 @@
                             self.carrierCodeTextField.text,
                             self.flightNumberTextField.text,
                             self.departingOrArriving,
-                            year,month,day ];
-    
-//    NSLog(@"1.) %@", resourceURL);
+                            year,month,day];
+
     [[APIClient sharedClient] GET:resourceURL parameters:info progress:^(NSProgress * _Nonnull downloadProgress) {
 
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@" 1. )%@", responseObject);
+
         NSDictionary *responseDictionary = responseObject;
         NSArray *flightStatus = responseDictionary[@"flightStatuses"];
-        
         
         if (!responseDictionary[@"error"] && flightStatus.count != 0 ) {
 
@@ -272,7 +276,7 @@
         [self.doneButton setEnabled:YES];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@" 2. )%@", error);
+
         [self.doneButton setEnabled:YES];
         [self.refreshActivityIndicator setHidden:YES];
         [self.refreshActivityIndicator stopAnimating];

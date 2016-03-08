@@ -8,6 +8,9 @@
 
 #import "FlightStatusViewController.h"
 #import <PureLayout/PureLayout.h>
+#import "Flight+CoreDataProperties.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface FlightStatusViewController ()
 
@@ -20,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
     NSArray *flightArray = [[NSArray alloc] initWithArray:self.flightStatusDictionary[@"flightStatuses"]];
     NSDictionary *flightStatus = [flightArray objectAtIndex:0];
     self.carrierFsCodeLabel.text = [NSString stringWithFormat:@"(%@)",  flightStatus[@"carrierFsCode"]];
@@ -48,9 +50,9 @@
     NSDictionary *departureDate = flightStatus[@"departureDate"];
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
-//    format.dateFormat = @"MM-dd-yyyy, hh:mm a";
+
     [format setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
-    //    NSLog(@"%@", [format stringFromDate:[NSDate new]]);
+
     NSDate *dDate =[format dateFromString:departureDate[@"dateLocal"]];
     NSDate *aDate = [format dateFromString:arrivalDate[@"dateLocal"]];
     
@@ -61,6 +63,12 @@
     self.departureDate.text = [NSString stringWithFormat:@"Departing at: %@", [formatter stringFromDate:dDate]];
     self.arrivalDateLabel.text = [NSString stringWithFormat:@"Arriving at: %@", [formatter stringFromDate:aDate]];
 
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    [SVProgressHUD dismiss];
+    
+    [super viewWillDisappear:animated];
 }
 
 -(NSString*)getStatus :(NSString*) status {
@@ -91,6 +99,43 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)saveButtonPressed:(id)sender {
+
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        
+        
+        Flight *flight = [Flight MR_findFirstInContext:localContext];
+        if (!flight ) {
+            Flight *flight = [Flight MR_createEntityInContext:localContext];
+            
+            flight.carrierFsCode = self.carrierFsCodeLabel.text;
+            flight.airlineName = self.airlineNameLabel.text;
+            flight.departureAirportFsCode = self.departureAirportFsCodeLabel.text;
+            flight.arrivalAirportFsCode = self.arrivalAirportFsCodeLabel.text;
+            flight.status = self.statusLabel.text;
+            flight.departureDate = self.departureDate.text;
+            flight.arrivalDate = self.arrivalDateLabel.text;
+        } else {
+            flight.carrierFsCode = self.carrierFsCodeLabel.text;
+            flight.airlineName = self.airlineNameLabel.text;
+            flight.departureAirportFsCode = self.departureAirportFsCodeLabel.text;
+            flight.arrivalAirportFsCode = self.arrivalAirportFsCodeLabel.text;
+            flight.status = self.statusLabel.text;
+            flight.departureDate = self.departureDate.text;
+            flight.arrivalDate = self.arrivalDateLabel.text;
+
+        }
+
+        
+        
+    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+        
+        if (!error) {
+
+            [SVProgressHUD showSuccessWithStatus:@"Flight Saved!"];
+        }
+    }];
 }
 
 @end

@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *refreshActivityIndicator;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *savedFlightsButton;
+
 @end

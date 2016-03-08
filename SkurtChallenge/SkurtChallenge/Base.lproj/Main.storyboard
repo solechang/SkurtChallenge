@@ -161,6 +161,7 @@
                         <outlet property="doneButton" destination="K9p-Qe-Nfp" id="NbY-pR-og6"/>
                         <outlet property="flightNumberTextField" destination="mCW-7t-4tg" id="whL-bF-XEe"/>
                         <outlet property="refreshActivityIndicator" destination="YZE-WA-jO0" id="wL4-P6-g5N"/>
+                        <outlet property="savedFlightsButton" destination="AKg-fT-twY" id="wy5-Ms-YrT"/>
                         <segue destination="KlA-pP-jQ0" kind="show" identifier="flightStatusSegue" id="CHP-4B-XcR"/>
                     </connections>
                 </tableViewController>
@@ -280,7 +281,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Status" id="ZpH-bi-jzH">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="rFj-Kg-wiB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="rFj-Kg-wiB">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="KlA-pP-jQ0" id="Smo-by-o2i"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="airlineNameLabel" destination="ekI-2t-mmu" id="uTa-KC-OQs"/>
@@ -289,6 +294,7 @@
                         <outlet property="carrierFsCodeLabel" destination="oQH-6A-grZ" id="vyo-NT-a7u"/>
                         <outlet property="departureAirportFsCodeLabel" destination="cBa-9n-bAL" id="Ypy-KF-5rC"/>
                         <outlet property="departureDate" destination="4J5-GF-PBZ" id="7S7-M5-Xp1"/>
+                        <outlet property="saveButton" destination="rFj-Kg-wiB" id="wqE-VY-nPh"/>
                         <outlet property="status" destination="uvB-ld-hGU" id="Nq1-X0-TuO"/>
                         <outlet property="statusLabel" destination="siJ-8W-pGx" id="gmA-jg-fQv"/>
                         <outlet property="toLabel" destination="HVx-uL-THN" id="djC-AZ-bHs"/>
@@ -451,7 +457,11 @@
                                 <action selector="backButtonPressed:" destination="WoO-6R-IbR" id="mRS-ZA-Wla"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Delete" id="GwS-l8-dKJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="GwS-l8-dKJ">
+                            <connections>
+                                <action selector="deleteButtonPressed:" destination="WoO-6R-IbR" id="dcv-Ff-q2R"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="airlineNameLabel" destination="0vv-TR-yrt" id="sbf-g9-KN3"/>

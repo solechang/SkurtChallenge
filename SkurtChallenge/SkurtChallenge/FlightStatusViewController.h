@@ -26,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *status;
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @end

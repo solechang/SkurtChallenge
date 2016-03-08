@@ -16,6 +16,9 @@
 		B9186D251C8818BD00AC306F /* SkurtChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D241C8818BD00AC306F /* SkurtChallengeUITests.m */; };
 		B9186D341C88197100AC306F /* FlightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9186D331C88197100AC306F /* FlightTableViewController.m */; };
 		B95C8EF61C8E8350004F439C /* SavedFlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95C8EF51C8E8350004F439C /* SavedFlightViewController.m */; };
+		B95C8EFA1C8E8F18004F439C /* FlightModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95C8EF81C8E8F18004F439C /* FlightModel.xcdatamodeld */; };
+		B95C8EFF1C8E9200004F439C /* Flight+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B95C8EFC1C8E9200004F439C /* Flight+CoreDataProperties.m */; };
+		B95C8F001C8E9200004F439C /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = B95C8EFE1C8E9200004F439C /* Flight.m */; };
 		B97D69831C89484B0020D05A /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B97D69821C89484B0020D05A /* APIClient.m */; };
 		B9FD66631C8D6E830047DC93 /* FlightStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FD66621C8D6E830047DC93 /* FlightStatusViewController.m */; };
 		E8DCBE272F744BBA2E8DDB49 /* libPods-SkurtChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 977636C7CF7659789869A865 /* libPods-SkurtChallenge.a */; };
@@ -59,6 +62,11 @@
 		B9186D331C88197100AC306F /* FlightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewController.m; sourceTree = "<group>"; };
 		B95C8EF41C8E8350004F439C /* SavedFlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedFlightViewController.h; sourceTree = "<group>"; };
 		B95C8EF51C8E8350004F439C /* SavedFlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedFlightViewController.m; sourceTree = "<group>"; };
+		B95C8EF91C8E8F18004F439C /* FlightModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlightModel.xcdatamodel; sourceTree = "<group>"; };
+		B95C8EFB1C8E9200004F439C /* Flight+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Flight+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B95C8EFC1C8E9200004F439C /* Flight+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Flight+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B95C8EFD1C8E9200004F439C /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
+		B95C8EFE1C8E9200004F439C /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
 		B97D69811C89484B0020D05A /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		B97D69821C89484B0020D05A /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		B9FD66611C8D6E830047DC93 /* FlightStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightStatusViewController.h; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 		B9186CFE1C8818BD00AC306F /* SkurtChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B95C8EF71C8E8EBA004F439C /* Core Data */,
 				B9186D021C8818BD00AC306F /* AppDelegate.h */,
 				B9186D031C8818BD00AC306F /* AppDelegate.m */,
 				B9186D081C8818BD00AC306F /* Main.storyboard */,
@@ -169,6 +178,18 @@
 				B9186D261C8818BD00AC306F /* Info.plist */,
 			);
 			path = SkurtChallengeUITests;
+			sourceTree = "<group>";
+		};
+		B95C8EF71C8E8EBA004F439C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				B95C8EFB1C8E9200004F439C /* Flight+CoreDataProperties.h */,
+				B95C8EFC1C8E9200004F439C /* Flight+CoreDataProperties.m */,
+				B95C8EFD1C8E9200004F439C /* Flight.h */,
+				B95C8EFE1C8E9200004F439C /* Flight.m */,
+				B95C8EF81C8E8F18004F439C /* FlightModel.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		DD4DC160EFDB44890119A601 /* Frameworks */ = {
@@ -365,7 +386,10 @@
 				B9186D011C8818BD00AC306F /* main.m in Sources */,
 				B97D69831C89484B0020D05A /* APIClient.m in Sources */,
 				B95C8EF61C8E8350004F439C /* SavedFlightViewController.m in Sources */,
+				B95C8EFA1C8E8F18004F439C /* FlightModel.xcdatamodeld in Sources */,
 				B9FD66631C8D6E830047DC93 /* FlightStatusViewController.m in Sources */,
+				B95C8EFF1C8E9200004F439C /* Flight+CoreDataProperties.m in Sources */,
+				B95C8F001C8E9200004F439C /* Flight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +636,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B95C8EF81C8E8F18004F439C /* FlightModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B95C8EF91C8E8F18004F439C /* FlightModel.xcdatamodel */,
+			);
+			currentVersion = B95C8EF91C8E8F18004F439C /* FlightModel.xcdatamodel */;
+			path = FlightModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B9186CF41C8818BC00AC306F /* Project object */;
 }
