@@ -1,9 +1,13 @@
 # SkurtChallenge
 
 Instructions:
+
 1.) Download the zip and open SkurtChallenge.xcworkspace
+
 2.) Run app in Xcode
+
 3.) Enter following info: a.) Flight number, b.) Carrier Code, c.) Departing or Arriving, d.) Choose Date
+
 - Example
     - Flight number: 231
     - Carrier Code: VX
@@ -13,9 +17,13 @@ Instructions:
 
 4.) Press Done
 	- Status screen will be segued of the flight result
+	
 5.) Press ‘Save’ to save the flight status
+
 6.) Go back to Flight Status Screen
+
 7.) Click on ‘Saved Flights’ button on the top left
+
 8.) Delete saved flight if not needed
 
 Notes:
