@@ -30,7 +30,7 @@ Notes:
 The project will check if user did not input the correct data and alert user to input everything correctly. In addition, I have used auto layout via Storyboard to fit everything accordingly into the screen. I have also used MagicalRecord to save the results and users can delete their saved flight. As for animation, I have included the refreshing indicator when the app is searching for the flight status and included SVProgressHUD that alerts user when the flight status is saved.
 
 
-Say that I would have of included if I had month of time to develop app, I would improve:
+If I had a month of time to develop the app, I would improve:
 - Making the SkurtChallenge app look like the original Skurt app
     - Including tab options of Flight Status, Saved Flights
     - using: https://github.com/pkluz/PKRevealController
