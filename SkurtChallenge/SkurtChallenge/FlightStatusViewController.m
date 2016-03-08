@@ -7,7 +7,6 @@
 //
 
 #import "FlightStatusViewController.h"
-#import <PureLayout/PureLayout.h>
 #import "Flight+CoreDataProperties.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <SVProgressHUD/SVProgressHUD.h>
