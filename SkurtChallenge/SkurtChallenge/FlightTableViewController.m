@@ -83,7 +83,7 @@
         [self.carrierCodeTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
         [self hideDatePicker];
     } else if (indexPath.row == 2 ) {
-        // Pop up picker
+        // Pop up arriving/departing picker
         
         [self.flightNumberTextField resignFirstResponder];
         [self.carrierCodeTextField resignFirstResponder];
@@ -157,8 +157,6 @@
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     format.dateFormat = @"MM-dd-yyyy";
-    
-//    NSLog(@"%@", [format stringFromDate:[NSDate new]]);
     
     self.dateLabel.textColor = [UIColor blackColor];
     self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", [format stringFromDate:self.datePicker.date]];
