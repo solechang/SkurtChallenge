@@ -144,7 +144,7 @@
                     <navigationItem key="navigationItem" title="Flight Status" id="9eb-ia-OHf">
                         <barButtonItem key="leftBarButtonItem" title="Saved Flights" id="AKg-fT-twY">
                             <connections>
-                                <segue destination="606-3D-Wy9" kind="presentation" identifier="savedFlightSegue" modalTransitionStyle="partialCurl" id="BBR-jh-ptv"/>
+                                <segue destination="606-3D-Wy9" kind="presentation" identifier="savedFlightSegue" id="BBR-jh-ptv"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="K9p-Qe-Nfp">

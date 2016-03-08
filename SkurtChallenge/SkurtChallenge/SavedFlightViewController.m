@@ -43,10 +43,10 @@
 }
 
 - (IBAction)deleteButtonPressed:(id)sender {
-    [self popAlertViewForLoggingOut];
+    [self popAlertViewForDeletingSavedFlight];
     //alert
 }
-- (void)popAlertViewForLoggingOut{
+- (void)popAlertViewForDeletingSavedFlight{
     
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Flight Status"
