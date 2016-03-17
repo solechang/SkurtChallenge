@@ -2,11 +2,11 @@
 
 Instructions:
 
-1.) Download the zip and open SkurtChallenge.xcworkspace
+1.) Download the project and open SkurtChallenge.xcworkspace
 
 2.) Run app in Xcode
 
-3.) Enter following info: a.) Flight number, b.) Carrier Code, c.) Departing or Arriving, d.) Choose Date
+3.) Enter following info: a.) Flight number b.) Carrier Code c.) Departing or Arriving d.) Choose Date
 
 - Example
     - Flight number: 231
@@ -42,5 +42,6 @@ If I had a month of time to develop the app, I would improve:
     - For example, display and highlight textfield in red that the input is bad of either Flight Number or Carrier Code
 - Color coordination of the status of the flight
     - For example, landed flights should be displayed in green for good status indication; meanwhile, canceled flights should be displayed in red
+- Refresh and update saved flight
 - Way later improvements that can be included:
     - Including a map of airport when user is in the vicinity of the airport to confirm location
