@@ -45,3 +45,9 @@ If I had a month of time to develop the app, I would improve:
 - Refresh and update saved flight
 - Way later improvements that can be included:
     - Including a map of airport when user is in the vicinity of the airport to confirm location
+
+
+<u>Open Source Libraries implemented:</u>
+ - AFNetworking
+ - MagicalRecord
+ - SVProgressHUD
