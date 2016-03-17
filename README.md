@@ -47,7 +47,7 @@ If I had a month of time to develop the app, I would improve:
     - Including a map of airport when user is in the vicinity of the airport to confirm location
 
 
-<u>Open Source Libraries implemented:</u>
+Open Source Libraries implemented:
  - AFNetworking
  - MagicalRecord
  - SVProgressHUD
